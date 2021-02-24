@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">marcsite</h1>
+      <h1 class="title">{{ $t('message') }}</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -20,13 +20,26 @@
         >
           GitHub
         </a>
+        <nuxt-link
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+        >
+          {{ locale.name }}
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
+    },
+  },
+}
 </script>
 
 <style>
