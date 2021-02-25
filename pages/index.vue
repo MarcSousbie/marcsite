@@ -1,33 +1,23 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">{{ $t('message') }}</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-        <nuxt-link
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          :to="switchLocalePath(locale.code)"
-        >
-          {{ locale.name }}
-        </nuxt-link>
+    <div class="row align-items-center">
+      <div class="col-4">
+        <Portrait />
       </div>
+      <div class="col-md-8">
+        <h1 class="title">Marc Sousbie</h1>
+        <h2 class="subtitle">{{ $t('job') }}</h2>
+        <p class="text-muted">{{ $t('message') }}</p>
+      </div>
+    </div>
+    <div class="links">
+      <nuxt-link
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        :to="switchLocalePath(locale.code)"
+      >
+        {{ locale.name }}
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -57,7 +47,7 @@ export default {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 48px;
   color: #35495e;
   letter-spacing: 1px;
 }
