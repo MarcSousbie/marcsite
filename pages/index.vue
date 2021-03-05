@@ -1,6 +1,13 @@
 <template>
-  <div class="container">
-    <div class="row align-items-center">
+  <div>
+    <v-app>
+      <core-app-bar />
+
+      <core-view />
+
+      <core-footer />
+    </v-app>
+    <!-- <div class="row align-items-center">
       <div class="col-4">
         <Portrait />
       </div>
@@ -9,7 +16,7 @@
         <h2 class="subtitle">{{ $t('job') }}</h2>
         <p class="text-muted">{{ $t('message') }}</p>
       </div>
-    </div>
+    </div> -->
     <div class="links">
       <nuxt-link
         v-for="locale in availableLocales"
@@ -24,6 +31,13 @@
 
 <script>
 export default {
+  name: 'App',
+
+  components: {
+    CoreAppBar: () => import('@/components/core/AppBar'),
+    CoreFooter: () => import('@/components/core/Footer'),
+    CoreView: () => import('@/components/core/View'),
+  },
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
@@ -33,7 +47,7 @@ export default {
 </script>
 
 <style>
-.container {
+/* .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -58,7 +72,7 @@ export default {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
-}
+} */
 
 .links {
   padding-top: 15px;
