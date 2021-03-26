@@ -1,5 +1,7 @@
 <template>
-  <div class="container">
+  <div>
+    <CoreAppBar />
+    <CoreMainview />
     <div class="row align-items-center">
       <div class="col-4">
         <Portrait />
@@ -19,6 +21,7 @@
         {{ locale.name }}
       </nuxt-link>
     </div>
+    <CoreFooter />
   </div>
 </template>
 

@@ -1,3 +1,5 @@
+// import colors from 'vuetify/es5/util/colors'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -29,12 +31,12 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // https://github.com/nuxt-community/vuetify-module
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://i18n.nuxtjs.org/
@@ -56,6 +58,20 @@ export default {
     detectBrowserLanguage: {
       useCookie: true,
       onlyOnroot: true,
+    },
+  },
+
+  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
+  vuetify: {
+    theme: {
+      themes: {
+        light: {
+          primary: '#D3C3BC',
+          secondary: '#BFADA5',
+          accent: '#D8EBF1',
+          info: '#5B5C79',
+        },
+      },
     },
   },
 
