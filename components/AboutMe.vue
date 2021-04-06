@@ -8,7 +8,9 @@
       <v-col class="pa-5" cols="12" md="6">
         <base-bubble-1 style="transform: translate(5%, -5%)" />
 
-        <base-heading class="info--text"> About Me </base-heading>
+        <base-heading class="info--text"
+          >{{ $t('aboutme.title') }}
+        </base-heading>
 
         <base-text class="mb-5">
           Lorem ipsum dolor sit amet, consectetur adipi<br />

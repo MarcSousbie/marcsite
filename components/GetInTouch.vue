@@ -4,18 +4,33 @@
       <v-col class="pa-5" cols="12" md="6">
         <base-bubble-1 />
 
-        <base-heading class="mb-5"> Get In Touch </base-heading>
+        <base-heading class="mb-5"> {{ $t('getintouch.title') }} </base-heading>
 
         <v-sheet color="transparent" max-width="600">
-          <v-text-field color="info" label="Name" solo flat />
+          <v-text-field color="info" :label="$t('getintouch.name')" solo flat />
 
-          <v-text-field color="info" label="Email" solo flat />
+          <v-text-field
+            color="info"
+            :label="$t('getintouch.email')"
+            solo
+            flat
+          />
 
-          <v-text-field color="info" label="Subject" solo flat />
+          <v-text-field
+            color="info"
+            :label="$t('getintouch.subject')"
+            solo
+            flat
+          />
 
-          <v-textarea color="info" label="Message" solo flat />
+          <v-textarea
+            color="info"
+            :label="$t('getintouch.message')"
+            solo
+            flat
+          />
 
-          <base-btn>Send</base-btn>
+          <base-btn>{{ $t('getintouch.send') }}</base-btn>
         </v-sheet>
       </v-col>
 

@@ -1,10 +1,18 @@
 <template>
-  <v-img
-    class="grow hidden-sm-and-down"
-    contain
-    max-height="200"
-    width="100%"
-    position="bottom left"
-    :src="require('@/assets/bubbles2.png')"
-  />
+  <component :is="tag" class="display-1 v-heading mb-3 font-weight-light">
+    <slot />
+  </component>
 </template>
+
+<script>
+export default {
+  name: 'BaseSubheading',
+
+  props: {
+    tag: {
+      type: String,
+      default: 'h1',
+    },
+  },
+}
+</script>

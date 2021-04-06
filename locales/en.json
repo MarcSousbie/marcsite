@@ -1,5 +1,19 @@
 {
   "message": "Website coming soon!",
   "job": "Medical Writer",
-  "contactMsg": "Contact me"
+  "contactMsg": "Contact me",
+  "welcome": {
+    "title": "Welcome !"
+  },
+  "aboutme": {
+    "title": "About Me"
+  },
+  "getintouch": {
+    "title": "Get In Touch",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send"
+  }
 }

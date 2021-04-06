@@ -19,14 +19,15 @@
 
     <social-media />
 
-    <base-btn
-      class="ml-3"
-      large
-      href="https://store.vuetifyjs.com/product/freelancer-theme-free?ref=freelancer"
-    >
-      Download for Free
-
-      <v-icon right small> mdi-open-in-new </v-icon>
+    <base-btn class="ml-3" large>
+      <nuxt-link
+        v-for="locale in availableLocales"
+        :key="locale.code"
+        class="langLink"
+        :to="switchLocalePath(locale.code)"
+      >
+        {{ locale.name }}
+      </nuxt-link>
     </base-btn>
   </v-app-bar>
 </template>
@@ -38,6 +39,12 @@ export default {
     isScrolling: false,
   }),
 
+  computed: {
+    availableLocales() {
+      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
+    },
+  },
+
   methods: {
     onScroll() {
       const offset = window.pageYOffset
@@ -47,3 +54,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.langLink {
+  color: aliceblue;
+}
+</style>

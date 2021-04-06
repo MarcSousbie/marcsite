@@ -55,7 +55,7 @@ export default {
       },
       {
         name: 'Development',
-        icon: 'mdi-settings-outline',
+        icon: 'mdi-cog-outline',
         blurb: 'Curabitur et nisi semper, <br>pellent.',
       },
       {

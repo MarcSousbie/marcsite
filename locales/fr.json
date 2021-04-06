@@ -1,5 +1,19 @@
 {
   "message": "Site en construction",
   "job": "Rédacteur Médical",
-  "contactMsg": "Me contacter"
+  "contactMsg": "Me contacter",
+  "welcome": {
+    "title": "Bienvenue !"
+  },
+  "aboutme": {
+    "title": "Qui suis-je ?"
+  },
+  "getintouch": {
+    "title": "Me contacter",
+    "name": "Nom",
+    "email": "E-mail",
+    "subject": "Objet",
+    "message": "Message",
+    "send": "Envoyer"
+  }
 }

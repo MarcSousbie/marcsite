@@ -2,7 +2,7 @@
   <div>
     <CoreAppBar />
     <CoreMainview />
-    <div class="row align-items-center">
+    <!-- <div class="row align-items-center">
       <div class="col-4">
         <Portrait />
       </div>
@@ -11,29 +11,11 @@
         <h2 class="subtitle">{{ $t('job') }}</h2>
         <p class="text-muted">{{ $t('message') }}</p>
       </div>
-    </div>
-    <div class="links">
-      <nuxt-link
-        v-for="locale in availableLocales"
-        :key="locale.code"
-        :to="switchLocalePath(locale.code)"
-      >
-        {{ locale.name }}
-      </nuxt-link>
-    </div>
+    </div> -->
+
     <CoreFooter />
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    availableLocales() {
-      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
-    },
-  },
-}
-</script>
 
 <style>
 .container {
