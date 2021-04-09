@@ -8,6 +8,7 @@
 
         <v-sheet color="transparent" max-width="600">
           <v-form
+            v-model="valid"
             name="contact"
             method="post"
             data-netlify="true"
@@ -16,6 +17,7 @@
             <input type="hidden" name="form-name" value="contact" />
 
             <v-text-field
+              v-model="name"
               color="info"
               name="name"
               :label="$t('getintouch.name')"
@@ -33,6 +35,7 @@
               :placeholder="$t('getintouch.email')"
               solo
               flat
+              required
             />
 
             <v-text-field
@@ -45,6 +48,7 @@
             />
 
             <v-textarea
+              v-model="message"
               :rules="[rules.required]"
               color="info"
               name="message"
@@ -52,9 +56,12 @@
               :placeholder="$t('getintouch.message')"
               solo
               flat
+              required
             />
 
-            <base-btn type="submit">{{ $t('getintouch.send') }}</base-btn>
+            <base-btn type="submit" :disabled="!valid" @click="validate">{{
+              $t('getintouch.send')
+            }}</base-btn>
           </v-form>
         </v-sheet>
       </v-col>
@@ -70,15 +77,24 @@
 export default {
   data() {
     return {
+      valid: true,
+      name: '',
       email: '',
+      message: '',
       rules: {
-        required: (value) => !!value || 'Required.',
+        required: (value) => !!value || this.$i18n.t('getintouch.required'),
         email: (value) => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || 'Invalid e-mail.'
+          return pattern.test(value) || this.$i18n.t('getintouch.invalid')
         },
       },
     }
+  },
+
+  methods: {
+    validate() {
+      this.$refs.form.validate()
+    },
   },
 }
 </script>
