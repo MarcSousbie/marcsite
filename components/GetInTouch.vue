@@ -17,6 +17,7 @@
 
             <v-text-field
               color="info"
+              name="name"
               :label="$t('getintouch.name')"
               :placeholder="$t('getintouch.name')"
               solo
@@ -27,6 +28,7 @@
               v-model="email"
               :rules="[rules.required, rules.email]"
               color="info"
+              name="email"
               :label="$t('getintouch.email')"
               :placeholder="$t('getintouch.email')"
               solo
@@ -35,6 +37,7 @@
 
             <v-text-field
               color="info"
+              name="subject"
               :label="$t('getintouch.subject')"
               :placeholder="$t('getintouch.subject')"
               solo
@@ -44,6 +47,7 @@
             <v-textarea
               :rules="[rules.required]"
               color="info"
+              name="message"
               :label="$t('getintouch.message')"
               :placeholder="$t('getintouch.message')"
               solo
