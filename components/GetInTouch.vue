@@ -67,7 +67,7 @@
       </v-col>
 
       <v-col class="hidden-sm-and-down" md="6">
-        <v-img :src="require('@/assets/contact.png')" height="100%" />
+        <v-img :src="require('@/assets/contact.webp')" height="100%" />
       </v-col>
     </v-row>
   </section>

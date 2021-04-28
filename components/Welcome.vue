@@ -2,10 +2,7 @@
   <section id="welcome" class="overflow-hidden">
     <v-row no-gutters>
       <v-col class="hidden-sm-and-down" md="6">
-        <v-img
-          :src="require('@/assets/scott-webb-OxHPDs4WV8Y-unsplash.jpg')"
-          height="100vh"
-        />
+        <v-img :src="require('@/assets/welcome.webp')" height="100vh" />
       </v-col>
 
       <v-col

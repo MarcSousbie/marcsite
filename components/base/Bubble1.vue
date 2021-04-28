@@ -5,6 +5,6 @@
     max-height="200"
     width="100%"
     position="top right"
-    :src="require('@/assets/bubbles1.png')"
+    :src="require('@/assets/bubbles1.webp')"
   />
 </template>

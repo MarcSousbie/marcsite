@@ -31,7 +31,7 @@
         </v-row>
       </v-col>
       <v-col class="hidden-sm-and-down" md="6">
-        <v-img :src="require('@/assets/services.png')" height="100%" />
+        <v-img :src="require('@/assets/services.webp')" height="100%" />
       </v-col>
     </v-row>
   </section>
